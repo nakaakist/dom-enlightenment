@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root">
+      hoge
+      <div id="child">child</div>
+    </div>
+    <div id="sibling">sibling</div>
+    <script>
+      const node = document.getElementById("root");
+      const child = document.getElementById("child");
+      const sibling = document.getElementById("sibling");
+
+      window.console.log(node.contains(child));
+      window.console.log(node.contains(sibling));
+    </script>
+  </body>
+</html>

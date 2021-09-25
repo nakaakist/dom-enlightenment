@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <div id="div1"></div>
+    <script>
+      const newDiv = document.createElement("p");
+      const newContent = document.createTextNode("Hi there and greetings!");
+      newDiv.appendChild(newContent);
+
+      const currentDiv = document.getElementById("div1");
+      document.body.insertBefore(newDiv, currentDiv);
+
+      setTimeout(() => {
+        newDiv.setAttribute("style", "color: red");
+        newDiv.firstChild.nodeValue = "color changed!";
+      }, 1000);
+
+      console.log(newDiv.firstChild.nodeValue);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <a href="https://www.google.com">google</a>
+    <div>
+      <p>hoge</p>
+    </div>
+    <script>
+      for (const key in Node) {
+        console.log(Node[key]);
+      }
+
+      const nodeAnchor = document.querySelector("a");
+
+      for (const key in nodeAnchor) {
+        console.log(`nodeAnchor key: ${key}`);
+      }
+
+      const div = document.querySelector("div");
+
+      console.log(div.children[0]);
+    </script>
+  </body>
+</html>
