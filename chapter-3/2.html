@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .bg {
+        background-color: black;
+      }
+      .redText {
+        color: red;
+      }
+      .whiteText {
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root" class="bg redText">hoge</div>
+    <script>
+      const div = document.getElementById("root");
+
+      const classList = div.classList;
+      classList.toggle("redText");
+      classList.toggle("whiteText");
+
+      for (const cls of classList) {
+        const p = document.createElement("p");
+        p.textContent = `class: ${cls}`;
+        p.classList.add("redText");
+        div.appendChild(p);
+      }
+    </script>
+  </body>
+</html>

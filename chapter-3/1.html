@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root"></div>
+    <script>
+      const div = document.getElementById("root");
+      const button = document.createElement("button");
+      button.textContent = "to google";
+      button.setAttribute("style", "color: red");
+      button.setAttribute("href", "https://www.google.com");
+      div.appendChild(button);
+
+      for (const key of ["tagName", "nodeName", "nodeType"]) {
+        const p = document.createElement("p");
+        p.textContent = `${key}: ${JSON.stringify(button[key])}`;
+        div.appendChild(p);
+      }
+      console.log(button.attributes);
+    </script>
+  </body>
+</html>
