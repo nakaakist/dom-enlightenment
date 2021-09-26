@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      body {
+        margin: 0;
+      }
+      #blue {
+        height: 100px;
+        width: 100px;
+        background: blue;
+        margin: 25px;
+        position: fixed;
+      }
+      #red {
+        height: 50px;
+        width: 50px;
+        background: red;
+        top: 10px;
+        left: 10px;
+        position: absolute;
+      }
+      #exp {
+        padding-top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="blue">
+      <div id="red"></div>
+    </div>
+    <div id="exp"></div>
+    <script>
+      const div = document.querySelector("#red");
+      const expDiv = document.getElementById("exp");
+
+      for (const key of ["offsetLeft", "offsetTop", "offsetParent"]) {
+        const p = document.createElement("p");
+        p.textContent = `${key}: ${div[key]}`;
+        console.log(key, div[key]);
+        expDiv.appendChild(p);
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      div {
+        height: 300px;
+        width: 300px;
+        overflow: auto;
+      }
+      .sky {
+        height: 1000px;
+        width: 1000px;
+        background: linear-gradient(
+          135deg,
+          rgba(2, 0, 36, 1) 0%,
+          rgba(9, 9, 121, 1) 35%,
+          rgba(0, 212, 255, 1) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div><p class="sky"></p></div>
+
+    <script>
+      const div = document.querySelector("div");
+      setTimeout(() => {
+        div.scrollTop = 750;
+        div.scrollLeft = 750;
+      }, 1000);
+
+      const p = document.createElement("p");
+      p.textContent = `scroll height: ${div.scrollHeight}, scroll width: ${div.scrollWidth}`;
+      document.body.appendChild(p);
+    </script>
+  </body>
+</html>
