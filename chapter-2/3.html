@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <iframe id="frame"></iframe>
+    <script>
+      const frame = document.getElementById("frame");
+      const docInFrame = document.implementation.createHTMLDocument();
+      const p = docInFrame.createElement("p");
+      p.textContent = "text in frame!";
+      docInFrame.body.appendChild(p);
+
+      let destDoc = frame.contentDocument;
+      let srcNode = docInFrame.documentElement;
+      let newNode = destDoc.importNode(srcNode, true);
+
+      destDoc.replaceChild(newNode, destDoc.documentElement);
+    </script>
+  </body>
+</html>
