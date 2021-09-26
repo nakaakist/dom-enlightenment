@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="root">
+      <ul>
+        <li id="root">hoge</li>
+        <li>fuga</li>
+      </ul>
+    </div>
+    <script>
+      const div = document.getElementById("root");
+      const lis = document.querySelectorAll("li");
+      const lis2 = document.getElementsByTagName("li");
+      const all = document.all;
+
+      console.log(div);
+      console.log(lis);
+      console.log(lis2);
+      console.log(all);
+    </script>
+  </body>
+</html>
