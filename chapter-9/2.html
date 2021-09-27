@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .blue {
+        background: blue;
+      }
+    </style>
+  </head>
+  <div class="blue"></div>
+  <body>
+    <script>
+      const css = document.getElementsByTagName("style")[0].sheet;
+      css.insertRule("div {width: 100px; height: 100px}", 1);
+      css.cssRules[0].style.background = "#aaaaff";
+    </script>
+  </body>
+</html>
