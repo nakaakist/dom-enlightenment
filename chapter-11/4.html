@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="parent">
+      parent
+      <p id="child">child</p>
+    </div>
+    <script>
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+
+      for (const [elem, name] of [
+        [window, "window"],
+        [parent, "parent"],
+        [child, "child"],
+      ]) {
+        elem.addEventListener("click", (event) => {
+          console.log(`${name}, this: ${this}`);
+          console.log(`${name}, currentTarget: ${event.currentTarget}`);
+          console.log(`${name}, target: ${event.target}`);
+        });
+      }
+    </script>
+  </body>
+</html>

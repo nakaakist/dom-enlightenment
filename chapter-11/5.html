@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>prevent default</p>
+    <input id="preventDefault" />
+    <p id="result"></p>
+    <script>
+      const p = document.getElementById("result");
+
+      const input = document.getElementById("preventDefault");
+
+      input.addEventListener("keydown", (event) => {
+        p.textContent += event.key;
+        event.preventDefault();
+      });
+    </script>
+  </body>
+</html>

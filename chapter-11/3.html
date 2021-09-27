@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <div id="parent">
+      parent
+      <div id="child">child</div>
+    </div>
+    <script>
+      const parent = document.getElementById("parent");
+      const child = document.getElementById("child");
+
+      for (const [elem, name] of [
+        [window, "window"],
+        [parent, "parent"],
+        [child, "child"],
+      ]) {
+        elem.addEventListener(
+          "click",
+          (event) => {
+            alert(`${name}, capture`);
+          },
+          true
+        );
+
+        elem.addEventListener(
+          "click",
+          () => {
+            alert(`${name}, bubble`);
+          },
+          false
+        );
+      }
+    </script>
+  </body>
+</html>

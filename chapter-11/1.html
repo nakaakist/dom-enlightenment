@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <button
+    id="inline"
+    onclick="const p = document.createElement('p'); p.textContent = 'inline clicked!'; document.body.appendChild(p);"
+  >
+    inline
+  </button>
+  <button id="property">property</button>
+  <button id="eventListener">add event listener</button>
+  <script>
+    const changeResultText = (text) => {
+      const p = document.createElement("p");
+      p.textContent = text;
+      document.body.appendChild(p);
+    };
+
+    const propButton = document.getElementById("property");
+    propButton.onclick = () => changeResultText("property clicked!");
+
+    const eventListenerButton = document.getElementById("eventListener");
+    eventListenerButton.addEventListener("click", () =>
+      changeResultText("add event listener clicked!")
+    );
+    eventListenerButton.addEventListener("click", () =>
+      changeResultText("additional text for event listener!")
+    );
+  </script>
+</html>

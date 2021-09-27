@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+<html>
+  <p id="xy">move your mouse!</p>
+  <script>
+    const p = document.getElementById("xy");
+
+    window.addEventListener("mousemove", (event) => {
+      p.textContent = `x: ${event.clientX}, y: ${event.clientY}`;
+    });
+  </script>
+</html>
