@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div></div>
+    <script>
+      const div = document.getElementsByTagName("div")[0];
+      div.style.background = "blue";
+
+      div.style.setProperty("margin-top", "100px");
+
+      const inlineStyleText = `inline style: ${div.style.cssText}`;
+
+      const actualStyle = window.getComputedStyle(div);
+      let actualStyleText = "actual style: ";
+      for (const styleProp of actualStyle) {
+        const value = actualStyle.getPropertyValue(styleProp);
+        if (value === "") continue;
+
+        actualStyleText += `${styleProp}: ${value}; `;
+      }
+
+      for (const text of [inlineStyleText, actualStyleText]) {
+        const p = document.createElement("p");
+        p.textContent = text;
+        document.body.appendChild(p);
+      }
+    </script>
+  </body>
+</html>
