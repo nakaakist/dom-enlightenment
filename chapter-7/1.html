@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p style="color: red">
+      <span hidden>This is the hidden secret. </span>This is
+      <strong>the original text. </strong>
+    </p>
+    <script>
+      const p = document.getElementsByTagName("p")[0];
+      const text = document.createTextNode("this is the created text");
+      p.appendChild(text);
+
+      text.appendData("!!");
+
+      console.log(p.firstChild.nodeValue);
+
+      for (const key of ["textContent", "innerText"]) {
+        const textP = document.createElement("p");
+        textP.textContent = `${key}: ${p[key]}`;
+        document.body.appendChild(textP);
+      }
+    </script>
+  </body>
+</html>

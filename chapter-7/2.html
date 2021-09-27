@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <body>
+    <p>the original text.</p>
+    <script>
+      const p = document.getElementsByTagName("p")[0];
+      const text = document.createTextNode("this is the created text");
+      p.appendChild(text);
+
+      console.log(p.childNodes);
+
+      p.normalize();
+
+      console.log(p.childNodes);
+
+      const normText = p.firstChild;
+      const splitText = normText.splitText(4);
+
+      console.log(p.childNodes);
+      console.log(splitText.data);
+    </script>
+  </body>
+</html>
